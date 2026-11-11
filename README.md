@@ -1,6 +1,6 @@
 # ET-RHO and ACVO for News-Title Processing
 
-Reference implementation scaffold for the manuscript **“Word Embedding Optimization with Clustering-Based Pseudo-Labels for News Selection in Online News Providers.”**
+Reference implementation for the manuscript **“Word Embedding Optimization with Clustering-Based Pseudo-Labels for News Selection in Online News Providers.”**
 
 ET-RHO combines TF-IDF/SVD, Word2Vec, and LDA representations, tunes Word2Vec settings with TPE, derives training pseudo-labels from K-means, and trains a Random Forest (RF). ACVO processes sequential batches and triggers representation refitting and RF retraining when vocabulary novelty or a decline in mean maximum RF probability crosses a threshold.
 
