@@ -1,0 +1,55 @@
+# Values below are implementation defaults where the manuscript is silent.
+# See docs/reproducibility.md before treating them as the original experiment settings.
+experiment:
+  random_seed_start: 1000
+  repetitions: 30
+  test_fraction: 0.20
+  cv_folds: 5
+  tpe_trials: 1000
+  tpe_patience: 10
+  confidence_threshold: 0.10
+  vocabulary_threshold: 0.10
+  stream_batches: 5
+  initial_train_fraction: 0.80
+  metric_average: macro
+
+text:
+  language: en
+  min_token_length: 1
+
+representation:
+  tfidf_max_features: 20000
+  tfidf_min_df: 1
+  svd_components: 100
+  lda_topics: 20
+  lda_max_iter: 20
+  word2vec_epochs: 10
+  word2vec_min_count: 1
+  word2vec_workers: 1
+  word2vec_vector_size_default: 100
+  word2vec_window_default: 5
+  word2vec_sg_default: 1
+  tpe_vector_size_min: 50
+  tpe_vector_size_max: 200
+  tpe_vector_size_step: 10
+  tpe_window_min: 3
+  tpe_window_max: 10
+  tpe_sg_values: [0, 1]
+
+models:
+  kmeans_n_init: 10
+  kmeans_max_iter: 300
+  rf_estimators: 300
+  rf_max_features: sqrt
+  rf_class_weight: balanced_subsample
+  rf_n_jobs: -1
+
+# K values reported in the manuscript. Pass one value via --clusters for a run.
+datasets:
+  Indian News: {n: 5000, language: en, clusters: 8, source: Kaggle}
+  Reuters News: {n: 5000, language: en, clusters: 13, source: Kaggle}
+  Article News: {n: 5000, language: en, clusters: 10, source: Kaggle}
+  Financial News: {n: 5000, language: en, clusters: 8, source: Kaggle}
+  Variation News: {n: 5000, language: en, clusters: 12, source: Kaggle}
+  Microsoft News: {n: 5000, language: en, clusters: 8, source: Microsoft Research MIND}
+  Thai News: {n: 2496, language: th, clusters: 14, source: Private digital television provider}
